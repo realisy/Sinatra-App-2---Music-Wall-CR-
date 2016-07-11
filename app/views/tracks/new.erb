@@ -1,3 +1,6 @@
+<body>
+  <div class="container">
+    <!-- Page Content goes here -->
 <% if @track && @track.errors.any? %>
   <div>
     <strong>Some issues with your message, please fix them:</strong>
@@ -9,20 +12,32 @@
   </div>
 <% end %>
 
+<hr>
+
+<div class="text">
+<p>Please fill out the form below to post your favorite track!</p>
+</div>
+<hr>
+
 <form method="post" action="/track">
   <div>
     <label>Author:</label>
-    <input type="text" name="author" value="<%= @mtrack && @track.author %>">
+    <input type="text" name="author" value="<%= @mtrack && @track.author %>", size="50">
   </div>
   <div>
     <label>Title:</label>
-    <input type="text" name="title" value="<%= @mtrack && @track.title %>">
+    <input type="text" name="title" value="<%= @mtrack && @track.title %>", size="50">
   </div>
   <div>
     <label>Url:</label>
-    <input type="text" name="url" value="<%= @mtrack && @track.url %>">
+    <input type="text" name="url" value="<%= @mtrack && @track.url %>", size="50">
   </div>
-  <div>
-    <input type="submit" value="Submit">
+  <div class="abutton">
+  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
   </div>
 </form>
+
+</div>
+</body>

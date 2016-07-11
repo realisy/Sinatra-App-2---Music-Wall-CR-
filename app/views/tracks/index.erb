@@ -1,10 +1,19 @@
-<% @track.each do |track| %>
-  <div class="track">
-    <h3><a href="/track/<%= track.id %>"><%= track.title %></a> <small>(by: <%= track.author %>)</small></h3>
-    <p>
-      <%= track.url %>
-    </p>
+<body>
+  <div class="container">
+    <!-- Page Content goes here -->
+
+    <% @track.each do |track| %>
+      <div class="track">
+        <h3><a href="/track/<%= track.id %>"><%= track.title %></a> <small>(by: <%= track.author %>)</small></h3>
+        <p>
+          <%= track.url %>
+        </p>
+      </div>
+      <hr>
+    <% end %>
+
+    <div class="abutton">
+      <a href="/track/new" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    </div>
   </div>
-<% end %>
-<hr>
-<a href="/track/new">Post a song... It's FREE (for now)!</a>
+</body>
